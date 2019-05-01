@@ -14,7 +14,24 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?php
+        echo $form->field($model, 'content')->widget(vova07\imperavi\Widget::className(), [
+            'settings' => [
+                'lang' => 'ru',
+                'minHeight' => 200,
+                'plugins' => [
+                    'clips',
+                    'fullscreen',
+                ],
+                'clips' => [
+                    ['Lorem ipsum...', 'Lorem...'],
+                    ['red', '<span class="label-red">red</span>'],
+                    ['green', '<span class="label-green">green</span>'],
+                    ['blue', '<span class="label-blue">blue</span>'],
+                ],
+            ],
+        ]);
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
