@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Pages;
+use yii\data\ActiveDataProvider;
 
 class SiteController extends Controller
 {
@@ -63,6 +65,26 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    public function actionSearch($key = null)
+    {
+        $dataProvider = false;
+//        Yii::info($key, 'izlash');
+        if ($key != null) {
+            $search_query = Pages::find()
+                            ->where(['LIKE', 'name', $key])
+                            ->orWhere(['LIKE', 'content', $key]);
+            $dataProvider = new ActiveDataProvider([
+                'query' => $search_query
+            ]);
+
+           //Yii::info($search_query, 'search_result');
+        }
+
+        return $this->render('search', [
+            'dataProvider' => $dataProvider
+        ]);
     }
 
     /**

@@ -66,7 +66,7 @@
                                 'options' => ['class' => 'nav nav-tabs'],
                                 'items' => [
                                     ['label' => 'Home', 'url' => ['/site/index']],
-                                    ['label' => 'Pages', 'url' => ['/pages/index']],
+//                                    ['label' => 'Pages', 'url' => ['/pages/index']],
                                     ['label' => 'About', 'url' => ['/site/about']],
                                     ['label' => 'Contact', 'url' => ['/site/contact']],
                                     Yii::$app->user->isGuest ? (
