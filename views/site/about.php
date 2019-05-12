@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="icons">
                             <i class="fa fa-heart-o fa-3x"></i>
                         </div>
-                        <h4>Quick Support</h4>
+                        <h4><?php echo Yii::t('app', 'Quick Support')?></h4>
                         <p>
                             praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
                         </p>

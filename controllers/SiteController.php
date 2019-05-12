@@ -153,4 +153,11 @@ class SiteController extends Controller
     {
         return $this->render('widgets');
     }
+
+    public function actionChangeLang($lang_id)
+    {
+        Yii::$app->session->set('language', $lang_id);
+        return $this->goHome();
+    }
+
 }

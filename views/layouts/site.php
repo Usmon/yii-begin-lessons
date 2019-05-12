@@ -22,11 +22,9 @@
     <nav div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <ul class="social-network">
-                <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook fa-1x"></i></a></li>
-                <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
-                <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin fa-1x"></i></a></li>
-                <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest fa-1x"></i></a></li>
-                <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus fa-1x"></i></a></li>
+                <li><?= Html::a('UZ', ['site/change-lang', 'lang_id'=>'uz']) ?></li>
+                <li><?= Html::a('RU', ['site/change-lang', 'lang_id'=>'ru']) ?></li>
+                <li><?= Html::a('EN', ['site/change-lang', 'lang_id'=>'en']) ?></li>
             </ul>
             <ul class="info">
                 <li>
@@ -65,12 +63,12 @@
                             echo Nav::widget([
                                 'options' => ['class' => 'nav nav-tabs'],
                                 'items' => [
-                                    ['label' => 'Home', 'url' => ['/site/index']],
+                                    ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']],
 //                                    ['label' => 'Pages', 'url' => ['/pages/index']],
-                                    ['label' => 'About', 'url' => ['/site/about']],
-                                    ['label' => 'Contact', 'url' => ['/site/contact']],
+                                    ['label' => Yii::t('app', 'About'), 'url' => ['/site/about']],
+                                    ['label' => Yii::t('app', 'Contact'), 'url' => ['/site/contact']],
                                     Yii::$app->user->isGuest ? (
-                                    ['label' => 'Login', 'url' => ['/site/login']]
+                                    ['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']]
                                     ) : (
                                         '<li>'
                                         . Html::beginForm(['/site/logout'], 'post')
